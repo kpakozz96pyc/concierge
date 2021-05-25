@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "N19fk2R/UCON64WUFzMBNhVXKQRruS5f7uJhZ4Etmv2lD7eWOHMbdALhX5Gi1/eLH25ixF64N0ZA5VpZ1ofnkw==",
+  "success": true,
+  "projectFilePath": "C:\\work\\concierge\\server\\Concierge\\Concierge.DAL\\Concierge.DAL.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Anatoly\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\Anatoly\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
