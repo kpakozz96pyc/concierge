@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\work\\concierge\\server\\Concierge\\Concierge.DAL\\Concierge.DAL.csproj": {}
+    "C:\\work\\concierge\\server\\Concierge\\Concierge.API\\TopStore.Api.csproj": {}
   },
   "projects": {
-    "C:\\work\\concierge\\server\\Concierge\\Concierge.DAL\\Concierge.DAL.csproj": {
+    "C:\\work\\concierge\\server\\Concierge\\Concierge.API\\TopStore.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\work\\concierge\\server\\Concierge\\Concierge.DAL\\Concierge.DAL.csproj",
-        "projectName": "Concierge.DAL",
-        "projectPath": "C:\\work\\concierge\\server\\Concierge\\Concierge.DAL\\Concierge.DAL.csproj",
+        "projectUniqueName": "C:\\work\\concierge\\server\\Concierge\\Concierge.API\\TopStore.Api.csproj",
+        "projectName": "TopStore.Api",
+        "projectPath": "C:\\work\\concierge\\server\\Concierge\\Concierge.API\\TopStore.Api.csproj",
         "packagesPath": "C:\\Users\\Anatoly\\.nuget\\packages\\",
-        "outputPath": "C:\\work\\concierge\\server\\Concierge\\Concierge.DAL\\obj\\",
+        "outputPath": "C:\\work\\concierge\\server\\Concierge\\Concierge.API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -30,7 +30,14 @@
         "frameworks": {
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\work\\concierge\\server\\Concierge\\AWS.S3.StorageService\\AWS.S3.StorageService.csproj": {
+                "projectPath": "C:\\work\\concierge\\server\\Concierge\\AWS.S3.StorageService\\AWS.S3.StorageService.csproj"
+              },
+              "C:\\work\\concierge\\server\\Concierge\\TopStore.DAL\\TopStore.DAL.csproj": {
+                "projectPath": "C:\\work\\concierge\\server\\Concierge\\TopStore.DAL\\TopStore.DAL.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -43,33 +50,39 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
-            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
-              "version": "[3.1.7, )"
-            },
-            "Microsoft.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[5.0.6, )"
-            },
-            "Microsoft.EntityFrameworkCore.Abstractions": {
-              "target": "Package",
-              "version": "[5.0.6, )"
+              "version": "[3.1.8, )"
             },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[5.0.6, )"
+              "version": "[3.1.6, )"
             },
-            "Microsoft.EntityFrameworkCore.Tools": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
+            "Microsoft.IdentityModel.Tokens": {
               "target": "Package",
-              "version": "[5.0.6, )"
+              "version": "[6.7.1, )"
             },
-            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+            "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
               "target": "Package",
-              "version": "[5.0.6, )"
+              "version": "[1.10.9, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[5.5.1, )"
+            },
+            "Swashbuckle.AspNetCore.Swagger": {
+              "target": "Package",
+              "version": "[5.5.1, )"
+            },
+            "Swashbuckle.AspNetCore.SwaggerGen": {
+              "target": "Package",
+              "version": "[5.5.1, )"
+            },
+            "Swashbuckle.AspNetCore.SwaggerUi": {
+              "target": "Package",
+              "version": "[5.5.1, )"
             }
           },
           "imports": [
