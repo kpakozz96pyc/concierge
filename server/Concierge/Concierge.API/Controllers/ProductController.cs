@@ -57,7 +57,9 @@ namespace Concierge.Api.Controllers
                     Id = product.Id,
                     DisplayName = product.DisplayName,
                     Art = product.Art,
-                    Description = product.Description
+                    Description = product.Description,
+                    DescriptionHTML = product.DescriptionHTML,
+                    Img = product.Image
                 });
                 return product.Id;
             }

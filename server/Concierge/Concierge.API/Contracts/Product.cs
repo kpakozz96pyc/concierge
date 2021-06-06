@@ -6,5 +6,7 @@
         public string Art;
         public string Img;
         public string Description;
+
+        public string DescriptionHTML;
     }
 }

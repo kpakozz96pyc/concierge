@@ -11,5 +11,6 @@ namespace Concierge.DAL.DbModels
         public string Art { get; set; }
         public string Img { get; set; }
         public string Description { get; set; }
+        public string DescriptionHTML { get; set; }
     }
 }
