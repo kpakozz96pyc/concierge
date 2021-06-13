@@ -3,7 +3,6 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Concierge.Api.Attributes;
-using Concierge.Api.Contracts;
 
 namespace Concierge.Api.Controllers
 {

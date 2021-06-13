@@ -20,7 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Migrations\" />
+    <ProjectReference Include="..\Concierge.Core\Concierge.Core.csproj" />
   </ItemGroup>
 
 </Project>

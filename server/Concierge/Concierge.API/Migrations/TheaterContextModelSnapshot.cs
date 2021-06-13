@@ -73,14 +73,17 @@ namespace Concierge.API.Migrations
                     b.Property<string>("Art")
                         .HasColumnType("text");
 
-                    b.Property<string>("Description")
+                    b.Property<string>("DescriptionHTML")
                         .HasColumnType("text");
 
-                    b.Property<string>("DescriptionHTML")
+                    b.Property<string>("DescriptionText")
                         .HasColumnType("text");
 
                     b.Property<string>("DisplayName")
                         .HasColumnType("text");
+
+                    b.Property<Guid?>("ExtendedId")
+                        .HasColumnType("uuid");
 
                     b.Property<string>("Img")
                         .HasColumnType("text");
@@ -90,9 +93,25 @@ namespace Concierge.API.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("ExtendedId");
+
                     b.HasIndex("OrderId");
 
                     b.ToTable("Products");
+                });
+
+            modelBuilder.Entity("Concierge.DAL.DbModels.ProductExtended", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTimeOffset>("Start")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ProductExtended");
                 });
 
             modelBuilder.Entity("Concierge.DAL.DbModels.Purchase", b =>
@@ -141,11 +160,48 @@ namespace Concierge.API.Migrations
                     b.ToTable("PurchaseDescription");
                 });
 
+            modelBuilder.Entity("Concierge.DAL.DbModels.Seat", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<int>("Number")
+                        .HasColumnType("integer");
+
+                    b.Property<double>("Price")
+                        .HasColumnType("double precision");
+
+                    b.Property<Guid?>("ProductExtendedId")
+                        .HasColumnType("uuid");
+
+                    b.Property<int>("Row")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("Status")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("Type")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ProductExtendedId");
+
+                    b.ToTable("Seat");
+                });
+
             modelBuilder.Entity("Concierge.DAL.DbModels.Product", b =>
                 {
+                    b.HasOne("Concierge.DAL.DbModels.ProductExtended", "Extended")
+                        .WithMany()
+                        .HasForeignKey("ExtendedId");
+
                     b.HasOne("Concierge.DAL.DbModels.Order", null)
                         .WithMany("Products")
                         .HasForeignKey("OrderId");
+
+                    b.Navigation("Extended");
                 });
 
             modelBuilder.Entity("Concierge.DAL.DbModels.Purchase", b =>
@@ -167,6 +223,13 @@ namespace Concierge.API.Migrations
                     b.Navigation("Product");
                 });
 
+            modelBuilder.Entity("Concierge.DAL.DbModels.Seat", b =>
+                {
+                    b.HasOne("Concierge.DAL.DbModels.ProductExtended", null)
+                        .WithMany("Hall")
+                        .HasForeignKey("ProductExtendedId");
+                });
+
             modelBuilder.Entity("Concierge.DAL.DbModels.Cart", b =>
                 {
                     b.Navigation("Purchases");
@@ -175,6 +238,11 @@ namespace Concierge.API.Migrations
             modelBuilder.Entity("Concierge.DAL.DbModels.Order", b =>
                 {
                     b.Navigation("Products");
+                });
+
+            modelBuilder.Entity("Concierge.DAL.DbModels.ProductExtended", b =>
+                {
+                    b.Navigation("Hall");
                 });
 #pragma warning restore 612, 618
         }
