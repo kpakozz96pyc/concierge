@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "u1T0VXqiUDG7kGyqjvObFtBV8FJ/s8VneNpTxdYg12Tk9pBonFrfGJiCrtUwHLwm85Fi4Mk9QHsL7AaVCNNn3g==",
+  "dgSpecHash": "iSnb9y6yN5iyk5MBoSwIBrr6JKDok/RdDldtRDRwKvB0tm4voScp4ctEX+HtPumx2xcgBgW/D3wz8b4Jfvp2Vg==",
   "success": true,
   "projectFilePath": "C:\\work\\concierge\\server\\Concierge\\Concierge.DAL\\Concierge.DAL.csproj",
   "expectedPackageFiles": [
@@ -30,7 +30,9 @@
     "C:\\Users\\Anatoly\\.nuget\\packages\\system.collections.immutable\\5.0.0\\system.collections.immutable.5.0.0.nupkg.sha512",
     "C:\\Users\\Anatoly\\.nuget\\packages\\system.componentmodel.annotations\\5.0.0\\system.componentmodel.annotations.5.0.0.nupkg.sha512",
     "C:\\Users\\Anatoly\\.nuget\\packages\\system.diagnostics.diagnosticsource\\5.0.1\\system.diagnostics.diagnosticsource.5.0.1.nupkg.sha512",
-    "C:\\Users\\Anatoly\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.6.0\\system.runtime.compilerservices.unsafe.4.6.0.nupkg.sha512"
+    "C:\\Users\\Anatoly\\.nuget\\packages\\system.reflection.typeextensions\\4.5.0\\system.reflection.typeextensions.4.5.0.nupkg.sha512",
+    "C:\\Users\\Anatoly\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.6.0\\system.runtime.compilerservices.unsafe.4.6.0.nupkg.sha512",
+    "C:\\Users\\Anatoly\\.nuget\\packages\\typegen\\2.4.9\\typegen.2.4.9.nupkg.sha512"
   ],
   "logs": []
 }

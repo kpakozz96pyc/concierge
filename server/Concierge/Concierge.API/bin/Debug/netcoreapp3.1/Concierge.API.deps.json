@@ -793,8 +793,17 @@
       },
       "System.Runtime.CompilerServices.Unsafe/4.6.0": {},
       "System.Security.Cryptography.Cng/4.5.0": {},
+      "Concierge.Core/1.0.0": {
+        "runtime": {
+          "Concierge.Core.dll": {}
+        },
+        "compile": {
+          "Concierge.Core.dll": {}
+        }
+      },
       "Concierge.DAL/1.0.0": {
         "dependencies": {
+          "Concierge.Core": "1.0.0",
           "Microsoft.AspNetCore.Mvc.NewtonsoftJson": "3.1.7",
           "Microsoft.EntityFrameworkCore": "5.0.6",
           "Microsoft.EntityFrameworkCore.Abstractions": "5.0.6",
@@ -2721,6 +2730,11 @@
       "sha512": "sha512-WG3r7EyjUe9CMPFSs6bty5doUqT+q9pbI80hlNzo2SkPkZ4VTuZkGWjpp77JB8+uaL4DFPRdBsAY+DX3dBK92A==",
       "path": "system.security.cryptography.cng/4.5.0",
       "hashPath": "system.security.cryptography.cng.4.5.0.nupkg.sha512"
+    },
+    "Concierge.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "Concierge.DAL/1.0.0": {
       "type": "project",

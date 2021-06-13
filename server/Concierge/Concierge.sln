@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Concierge.DAL", "Concierge.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Concierge.API", "Concierge.API\Concierge.API.csproj", "{D5EA7332-4566-4F78-8CDA-AE02EFE6A98B}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Concierge.Core", "Concierge.Core\Concierge.Core.csproj", "{B1C49D0E-6E23-477C-AEBC-55FE84F0FE84}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{D5EA7332-4566-4F78-8CDA-AE02EFE6A98B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D5EA7332-4566-4F78-8CDA-AE02EFE6A98B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D5EA7332-4566-4F78-8CDA-AE02EFE6A98B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1C49D0E-6E23-477C-AEBC-55FE84F0FE84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1C49D0E-6E23-477C-AEBC-55FE84F0FE84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1C49D0E-6E23-477C-AEBC-55FE84F0FE84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1C49D0E-6E23-477C-AEBC-55FE84F0FE84}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

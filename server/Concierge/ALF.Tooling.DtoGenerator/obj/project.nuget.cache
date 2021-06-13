@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "+HgzytjOWQk/WWF15MRkq0lKyFDhUuSMYzQuTFz1PWggrnCmmyt4mVorK66Vx7727iyKivVRuK2NGXnpb7maRA==",
+  "success": true,
+  "projectFilePath": "C:\\work\\concierge\\server\\Concierge\\ALF.Tooling.DtoGenerator\\Concierge.Tooling.DtoGenerator.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Anatoly\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

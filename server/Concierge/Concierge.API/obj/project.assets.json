@@ -470,6 +470,15 @@
           "lib/netstandard2.0/System.IdentityModel.Tokens.Jwt.dll": {}
         }
       },
+      "System.Reflection.TypeExtensions/4.5.0": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/_._": {}
+        }
+      },
       "System.Runtime.CompilerServices.Unsafe/4.6.0": {
         "type": "package",
         "compile": {
@@ -494,10 +503,37 @@
           }
         }
       },
+      "TypeGen/2.4.9": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.2",
+          "System.Reflection.TypeExtensions": "4.5.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/TypeGen.Core.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/TypeGen.Core.dll": {}
+        }
+      },
+      "Concierge.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "TypeGen": "2.4.9"
+        },
+        "compile": {
+          "bin/placeholder/Concierge.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Concierge.Core.dll": {}
+        }
+      },
       "Concierge.DAL/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
+          "Concierge.Core": "1.0.0",
           "Microsoft.AspNetCore.Mvc.NewtonsoftJson": "3.1.7",
           "Microsoft.EntityFrameworkCore": "5.0.6",
           "Microsoft.EntityFrameworkCore.Abstractions": "5.0.6",
@@ -1437,6 +1473,73 @@
         "system.identitymodel.tokens.jwt.nuspec"
       ]
     },
+    "System.Reflection.TypeExtensions/4.5.0": {
+      "sha512": "dYSKm+jBVh/I9RQP6AaBiyd92Y6Ml9vEEcTSougcAMSt9X9QQHTGJo0p/uH4uSgODZe+5cuOkgg8wg02NuM0VQ==",
+      "type": "package",
+      "path": "system.reflection.typeextensions/4.5.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net46/System.Reflection.TypeExtensions.dll",
+        "lib/net461/System.Reflection.TypeExtensions.dll",
+        "lib/netcore50/System.Reflection.TypeExtensions.dll",
+        "lib/netcoreapp1.0/System.Reflection.TypeExtensions.dll",
+        "lib/netcoreapp2.0/_._",
+        "lib/netstandard1.3/System.Reflection.TypeExtensions.dll",
+        "lib/netstandard1.5/System.Reflection.TypeExtensions.dll",
+        "lib/netstandard2.0/System.Reflection.TypeExtensions.dll",
+        "lib/uap10.0.16299/_._",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net46/System.Reflection.TypeExtensions.dll",
+        "ref/net461/System.Reflection.TypeExtensions.dll",
+        "ref/net461/System.Reflection.TypeExtensions.xml",
+        "ref/netcoreapp2.0/_._",
+        "ref/netstandard1.3/System.Reflection.TypeExtensions.dll",
+        "ref/netstandard1.3/System.Reflection.TypeExtensions.xml",
+        "ref/netstandard1.3/de/System.Reflection.TypeExtensions.xml",
+        "ref/netstandard1.3/es/System.Reflection.TypeExtensions.xml",
+        "ref/netstandard1.3/fr/System.Reflection.TypeExtensions.xml",
+        "ref/netstandard1.3/it/System.Reflection.TypeExtensions.xml",
+        "ref/netstandard1.3/ja/System.Reflection.TypeExtensions.xml",
+        "ref/netstandard1.3/ko/System.Reflection.TypeExtensions.xml",
+        "ref/netstandard1.3/ru/System.Reflection.TypeExtensions.xml",
+        "ref/netstandard1.3/zh-hans/System.Reflection.TypeExtensions.xml",
+        "ref/netstandard1.3/zh-hant/System.Reflection.TypeExtensions.xml",
+        "ref/netstandard1.5/System.Reflection.TypeExtensions.dll",
+        "ref/netstandard1.5/System.Reflection.TypeExtensions.xml",
+        "ref/netstandard1.5/de/System.Reflection.TypeExtensions.xml",
+        "ref/netstandard1.5/es/System.Reflection.TypeExtensions.xml",
+        "ref/netstandard1.5/fr/System.Reflection.TypeExtensions.xml",
+        "ref/netstandard1.5/it/System.Reflection.TypeExtensions.xml",
+        "ref/netstandard1.5/ja/System.Reflection.TypeExtensions.xml",
+        "ref/netstandard1.5/ko/System.Reflection.TypeExtensions.xml",
+        "ref/netstandard1.5/ru/System.Reflection.TypeExtensions.xml",
+        "ref/netstandard1.5/zh-hans/System.Reflection.TypeExtensions.xml",
+        "ref/netstandard1.5/zh-hant/System.Reflection.TypeExtensions.xml",
+        "ref/netstandard2.0/System.Reflection.TypeExtensions.dll",
+        "ref/netstandard2.0/System.Reflection.TypeExtensions.xml",
+        "ref/uap10.0.16299/_._",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "runtimes/aot/lib/netcore50/System.Reflection.TypeExtensions.dll",
+        "runtimes/aot/lib/uap10.0.16299/_._",
+        "system.reflection.typeextensions.4.5.0.nupkg.sha512",
+        "system.reflection.typeextensions.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
     "System.Runtime.CompilerServices.Unsafe/4.6.0": {
       "sha512": "HxozeSlipUK7dAroTYwIcGwKDeOVpQnJlpVaOkBz7CM4TsE5b/tKlQBZecTjh6FzcSbxndYaxxpsBMz+wMJeyw==",
       "type": "package",
@@ -1525,6 +1628,56 @@
         "version.txt"
       ]
     },
+    "TypeGen/2.4.9": {
+      "sha512": "fD5DU7ThfrVjaZM+9FVDF+Y3CzGY9wAYhR6o3UPpn852m3n7kwZyM2+9UI3KaQPMUirknBAro0/umixKNv1abA==",
+      "type": "package",
+      "path": "typegen/2.4.9",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "lib/netstandard1.3/TypeGen.Core.dll",
+        "lib/netstandard1.3/TypeGen.Core.xml",
+        "lib/netstandard2.0/TypeGen.Core.dll",
+        "lib/netstandard2.0/TypeGen.Core.xml",
+        "tools/Newtonsoft.Json.dll",
+        "tools/NuGet.Common.dll",
+        "tools/NuGet.Configuration.dll",
+        "tools/NuGet.Frameworks.dll",
+        "tools/TypeGen.Cli.deps.json",
+        "tools/TypeGen.Cli.dll",
+        "tools/TypeGen.Cli.pdb",
+        "tools/TypeGen.Cli.runtimeconfig.json",
+        "tools/TypeGen.Core.dll",
+        "tools/TypeGen.Core.pdb",
+        "tools/TypeGen.Core.xml",
+        "tools/TypeGen.exe",
+        "tools/netcoreapp3.1/any/Newtonsoft.Json.dll",
+        "tools/netcoreapp3.1/any/NuGet.Common.dll",
+        "tools/netcoreapp3.1/any/NuGet.Configuration.dll",
+        "tools/netcoreapp3.1/any/NuGet.Frameworks.dll",
+        "tools/netcoreapp3.1/any/TypeGen.Cli.deps.json",
+        "tools/netcoreapp3.1/any/TypeGen.Cli.dll",
+        "tools/netcoreapp3.1/any/TypeGen.Cli.pdb",
+        "tools/netcoreapp3.1/any/TypeGen.Cli.runtimeconfig.json",
+        "tools/netcoreapp3.1/any/TypeGen.Core.dll",
+        "tools/netcoreapp3.1/any/TypeGen.Core.pdb",
+        "tools/netcoreapp3.1/any/TypeGen.Core.xml",
+        "tools/netcoreapp3.1/any/TypeGen.exe",
+        "tools/netcoreapp3.1/any/unix/lib/netstandard1.3/System.Security.Cryptography.ProtectedData.dll",
+        "tools/netcoreapp3.1/any/win/lib/netstandard1.3/System.Security.Cryptography.ProtectedData.dll",
+        "tools/runtimes/unix/lib/netstandard1.3/System.Security.Cryptography.ProtectedData.dll",
+        "tools/runtimes/win/lib/netstandard1.3/System.Security.Cryptography.ProtectedData.dll",
+        "typegen.2.4.9.nupkg.sha512",
+        "typegen.nuspec"
+      ]
+    },
+    "Concierge.Core/1.0.0": {
+      "type": "project",
+      "path": "../Concierge.Core/Concierge.Core.csproj",
+      "msbuildProject": "../Concierge.Core/Concierge.Core.csproj"
+    },
     "Concierge.DAL/1.0.0": {
       "type": "project",
       "path": "../Concierge.DAL/Concierge.DAL.csproj",
@@ -1552,9 +1705,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\work\\concierge\\server\\Concierge\\Concierge.API\\Concierge.Api.csproj",
-      "projectName": "Concierge.Api",
-      "projectPath": "C:\\work\\concierge\\server\\Concierge\\Concierge.API\\Concierge.Api.csproj",
+      "projectUniqueName": "C:\\work\\concierge\\server\\Concierge\\Concierge.API\\Concierge.API.csproj",
+      "projectName": "Concierge.API",
+      "projectPath": "C:\\work\\concierge\\server\\Concierge\\Concierge.API\\Concierge.API.csproj",
       "packagesPath": "C:\\Users\\Anatoly\\.nuget\\packages\\",
       "outputPath": "C:\\work\\concierge\\server\\Concierge\\Concierge.API\\obj\\",
       "projectStyle": "PackageReference",

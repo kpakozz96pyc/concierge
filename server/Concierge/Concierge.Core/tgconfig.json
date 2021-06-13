@@ -1,0 +1,4 @@
+﻿{
+  "generationSpecs": [ "DtoGenerationSpec" ],
+  "outputPath": "../../../client/corelib"
+}
