@@ -1,4 +1,0 @@
-C:\work\concierge\server\Concierge\ALF.Tooling.DtoGenerator\obj\Debug\netcoreapp3.1\Concierge.Tooling.DtoGenerator.csprojAssemblyReference.cache
-C:\work\concierge\server\Concierge\ALF.Tooling.DtoGenerator\obj\Debug\netcoreapp3.1\Concierge.Tooling.DtoGenerator.AssemblyInfoInputs.cache
-C:\work\concierge\server\Concierge\ALF.Tooling.DtoGenerator\obj\Debug\netcoreapp3.1\Concierge.Tooling.DtoGenerator.AssemblyInfo.cs
-C:\work\concierge\server\Concierge\ALF.Tooling.DtoGenerator\obj\Debug\netcoreapp3.1\Concierge.Tooling.DtoGenerator.csproj.CoreCompileInputs.cache
