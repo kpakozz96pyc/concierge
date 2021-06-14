@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Concierge.DAL;
 using Product = Concierge.DAL.DbModels.Product;
 using Concierge.Core.DTO.API;
+using System.Linq;
 
 namespace Concierge.Api.Controllers
 {
@@ -40,6 +41,34 @@ namespace Concierge.Api.Controllers
             {
                 var repository = uow.GetRepository<Product>();
                 var list = repository.GetPage(pageNumber, pageSize);
+                return list;
+            }
+        }
+
+        [HttpPost("Search")]
+        public IEnumerable<Product> Search(ProductFilter filter)
+        {
+            using (var uow = _uowFactory.Create())
+            {
+                var repository = uow.GetRepository<Product>();
+
+                var list = repository.GetPage(filter.PageNumber, filter.PageSize> 0 ? filter.PageSize: 10);
+
+                if (!String.IsNullOrEmpty(filter.Search))
+                {
+                    list = list.Where(p => p.DisplayName.Contains(filter.Search));
+                }
+
+                if (filter.FromDate.HasValue)
+                {
+                    list = list.Where(p => p.Extended.Start > filter.FromDate);
+                }
+
+                if (filter.ToDate.HasValue)
+                {
+                    list = list.Where(p => p.Extended.Start < filter.FromDate);
+                }
+
                 return list;
             }
         }

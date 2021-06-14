@@ -1,4 +1,4 @@
-﻿using Concierge.Enums.Core;
+﻿using Concierge.Core.Enums;
 
 namespace Concierge.DAL.DbModels
 {

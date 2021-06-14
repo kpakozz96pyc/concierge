@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Concierge.Enums.Core
+﻿namespace Concierge.Core.Enums
 {
     public enum SeatType
     {

@@ -2,9 +2,15 @@ import {createReducer} from "typesafe-actions";
 import {Product} from "../models/product";
 import {Actions} from "./actions";
 import {combineReducers} from "redux";
+import {ProductFilter} from "../../corelib/product-filter";
 
 const productList = createReducer<Product[]>([])
-    .handleAction(Actions.catalog.loadCatalog.success, (state: any, action: any) => {
+    .handleAction(Actions.catalog.searchCatalog.success, (state: any, action: any) => {
+        return action.payload
+    });
+
+const productListFilter = createReducer<ProductFilter           >({pageNumber:0, pageSize: 10} as ProductFilter)
+    .handleAction(Actions.catalog.updateProductFilter, (state: any, action: any) => {
         return action.payload
     });
 
@@ -16,5 +22,6 @@ const currentProduct = createReducer<Product| null>(null)
 export const catalogReducer = () =>
     combineReducers({
         productList,
-        currentProduct
+        currentProduct,
+        productListFilter
     });

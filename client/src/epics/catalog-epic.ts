@@ -19,6 +19,29 @@ const loadCatalogEpic: RootEpic = (action$, _, {catalogService}) =>
         )
     );
 
+const updateProductFilterEpic: RootEpic = (action$, _) =>
+    action$.pipe(
+        filter(isActionOf(Actions.catalog.updateProductFilter)),
+        map((action) => {
+                return Actions.catalog.searchCatalog.request(action.payload)
+            }
+        )
+    );
+
+const searchCatalogEpic: RootEpic = (action$, _, {catalogService}) =>
+    action$.pipe(
+        filter(isActionOf(Actions.catalog.searchCatalog.request)),
+        switchMap((action) => {
+                return catalogService.search(action.payload).pipe(
+                    map(page => {
+                        return Actions.catalog.searchCatalog.success(page)
+                    }),
+                    catchError(x => of(Actions.catalog.loadCatalog.failure(x)))
+                );
+            }
+        )
+    );
+
 const productPageOpenedEpic: RootEpic = (action$, _) =>
     action$.pipe(
         filter(isActionOf(Actions.catalog.productPageOpened)),
@@ -51,5 +74,7 @@ export const catalogEpics = [
     loadCatalogEpic,
     productPageOpenedEpic,
     loadProductEpic,
-    productUpdateEpic
+    productUpdateEpic,
+    searchCatalogEpic,
+    updateProductFilterEpic
 ];

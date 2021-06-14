@@ -1,8 +1,10 @@
 import {Product} from "../../models/product";
 import {HttpClient} from "./http-client";
+import {ProductFilter} from "../../../corelib/product-filter";
 
 export interface ICatalogApi {
     getPage(size: number, skip?: number): Promise<Product[]>
+    search(filter: ProductFilter): Promise<Product[]>
 }
 
 export class CatalogApi implements  ICatalogApi{
@@ -10,5 +12,9 @@ export class CatalogApi implements  ICatalogApi{
 
     getPage(pageSize: number, pageNumber?: number): Promise<Product[]> {
         return this.httpClient.get<Product[]>('/product/GetPage', {pageNumber: pageNumber, pageSize: pageSize}).then()
+    }
+
+    search(filter: ProductFilter): Promise<Product[]> {
+        return this.httpClient.post<Product[]>('/product/search', filter).then()
     }
 }

@@ -6,3 +6,4 @@ C:\work\concierge\server\Concierge\Concierge.Core\obj\Debug\netstandard2.0\Conci
 C:\work\concierge\server\Concierge\Concierge.Core\obj\Debug\netstandard2.0\Concierge.Core.csproj.CoreCompileInputs.cache
 C:\work\concierge\server\Concierge\Concierge.Core\obj\Debug\netstandard2.0\Concierge.Core.dll
 C:\work\concierge\server\Concierge\Concierge.Core\obj\Debug\netstandard2.0\Concierge.Core.pdb
+C:\work\concierge\server\Concierge\Concierge.Core\obj\Debug\netstandard2.0\Concierge.Core.csprojAssemblyReference.cache

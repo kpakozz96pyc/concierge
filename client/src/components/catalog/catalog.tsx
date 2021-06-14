@@ -10,7 +10,6 @@ export interface CatalogComponentProps {
 export const CatalogComponent: React.FC<CatalogComponentProps> = ({list}) => {
     return (
         <div className={styles.main}>
-            <h1>Responsive Card Grid Layout</h1>
             <div className={styles.cards}>
                 {list.map(i => <CatalogItemComponent item={i}/>)}
             </div>

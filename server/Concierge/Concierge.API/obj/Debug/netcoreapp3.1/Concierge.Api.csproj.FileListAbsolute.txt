@@ -1,3 +1,7 @@
+C:\work\concierge\server\Concierge\Concierge.API\obj\Debug\netcoreapp3.1\Concierge.API.AssemblyInfoInputs.cache
+C:\work\concierge\server\Concierge\Concierge.API\obj\Debug\netcoreapp3.1\Concierge.API.AssemblyInfo.cs
+C:\work\concierge\server\Concierge\Concierge.API\obj\Debug\netcoreapp3.1\Concierge.API.csproj.CoreCompileInputs.cache
+C:\work\concierge\server\Concierge\Concierge.API\obj\Debug\netcoreapp3.1\Concierge.API.MvcApplicationPartsAssemblyInfo.cache
 C:\work\concierge\server\Concierge\Concierge.API\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\work\concierge\server\Concierge\Concierge.API\bin\Debug\netcoreapp3.1\appsettings.json
 C:\work\concierge\server\Concierge\Concierge.API\bin\Debug\netcoreapp3.1\Concierge.API.exe
@@ -40,16 +44,13 @@ C:\work\concierge\server\Concierge\Concierge.API\bin\Debug\netcoreapp3.1\System.
 C:\work\concierge\server\Concierge\Concierge.API\bin\Debug\netcoreapp3.1\System.ComponentModel.Annotations.dll
 C:\work\concierge\server\Concierge\Concierge.API\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
 C:\work\concierge\server\Concierge\Concierge.API\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
+C:\work\concierge\server\Concierge\Concierge.API\bin\Debug\netcoreapp3.1\TypeGen.Core.dll
 C:\work\concierge\server\Concierge\Concierge.API\bin\Debug\netcoreapp3.1\Concierge.Core.dll
 C:\work\concierge\server\Concierge\Concierge.API\bin\Debug\netcoreapp3.1\Concierge.DAL.dll
 C:\work\concierge\server\Concierge\Concierge.API\bin\Debug\netcoreapp3.1\Concierge.DAL.pdb
 C:\work\concierge\server\Concierge\Concierge.API\bin\Debug\netcoreapp3.1\Concierge.Core.pdb
 C:\work\concierge\server\Concierge\Concierge.API\obj\Debug\netcoreapp3.1\Concierge.API.csprojAssemblyReference.cache
-C:\work\concierge\server\Concierge\Concierge.API\obj\Debug\netcoreapp3.1\Concierge.API.AssemblyInfoInputs.cache
-C:\work\concierge\server\Concierge\Concierge.API\obj\Debug\netcoreapp3.1\Concierge.API.AssemblyInfo.cs
-C:\work\concierge\server\Concierge\Concierge.API\obj\Debug\netcoreapp3.1\Concierge.API.csproj.CoreCompileInputs.cache
 C:\work\concierge\server\Concierge\Concierge.API\obj\Debug\netcoreapp3.1\Concierge.API.MvcApplicationPartsAssemblyInfo.cs
-C:\work\concierge\server\Concierge\Concierge.API\obj\Debug\netcoreapp3.1\Concierge.API.MvcApplicationPartsAssemblyInfo.cache
 C:\work\concierge\server\Concierge\Concierge.API\obj\Debug\netcoreapp3.1\staticwebassets\Concierge.API.StaticWebAssets.Manifest.cache
 C:\work\concierge\server\Concierge\Concierge.API\obj\Debug\netcoreapp3.1\staticwebassets\Concierge.API.StaticWebAssets.xml
 C:\work\concierge\server\Concierge\Concierge.API\obj\Debug\netcoreapp3.1\scopedcss\bundle\Concierge.API.styles.css

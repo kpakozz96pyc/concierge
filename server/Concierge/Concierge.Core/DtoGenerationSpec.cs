@@ -1,7 +1,5 @@
 ﻿using Concierge.Core.DTO.API;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using Concierge.Core.Enums;
 using TypeGen.Core.SpecGeneration;
 
 namespace Concierge.Core
@@ -11,6 +9,10 @@ namespace Concierge.Core
         public DtoGenerationSpec()
         {
             AddClass<AuthRequest>();
+            AddInterface<ProductFilter>();
+
+            AddEnum<SeatType>();
+            AddEnum<SeatStatus>();
         }
     }
 }
