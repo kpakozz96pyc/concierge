@@ -1,5 +1,6 @@
 using System;
 using Concierge.DAL.DbModels;
+using Concierge.DAL.Uow;
 
 namespace Concierge.DAL
 {
@@ -18,7 +19,10 @@ namespace Concierge.DAL
         }
 
         public IRepository<T> GetRepository<T>() where T: DbModel
-        {            
+        {
+            var type = typeof(T);
+            if(type == typeof(Product)) 
+                return new ProductRepository(_database) as IRepository<T>;
             return new Repository<T>(_database);
         }
 

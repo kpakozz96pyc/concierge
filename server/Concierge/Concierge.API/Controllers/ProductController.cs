@@ -7,6 +7,7 @@ using Concierge.DAL;
 using Product = Concierge.DAL.DbModels.Product;
 using Concierge.Core.DTO.API;
 using System.Linq;
+using Concierge.DAL.DbModels;
 
 namespace Concierge.Api.Controllers
 {
@@ -52,7 +53,7 @@ namespace Concierge.Api.Controllers
             {
                 var repository = uow.GetRepository<Product>();
 
-                var list = repository.GetPage(filter.PageNumber, filter.PageSize> 0 ? filter.PageSize: 10);
+                var list = repository.GetPage(filter.PageNumber, filter.PageSize > 0 ? filter.PageSize : 10);
 
                 if (!String.IsNullOrEmpty(filter.Search))
                 {
@@ -61,12 +62,12 @@ namespace Concierge.Api.Controllers
 
                 if (filter.FromDate.HasValue)
                 {
-                    list = list.Where(p => p.Extended.Start > filter.FromDate);
+                    list = list.Where(p => p.Extended?.Start > filter.FromDate);
                 }
 
                 if (filter.ToDate.HasValue)
                 {
-                    list = list.Where(p => p.Extended.Start < filter.FromDate);
+                    list = list.Where(p => p.Extended?.Start < filter.FromDate);
                 }
 
                 return list;
@@ -80,6 +81,12 @@ namespace Concierge.Api.Controllers
             using (var uow = _uowFactory.Create())
             {
                 var repository = uow.GetRepository<Product>();
+                var ext = new ProductExtended
+                {
+                    Start = product.Start,
+                    Hall = new List<Seat>()
+                };
+
                 repository.Create(new Product
                 {
                     Id = product.Id,
@@ -87,7 +94,9 @@ namespace Concierge.Api.Controllers
                     Art = product.Art,
                     DescriptionText = product.Description,
                     DescriptionHTML = product.DescriptionHTML,
-                    Img = product.Image
+                    Img = product.Image,
+                    Extended = ext
+                    
                 });
                 return product.Id;
             }

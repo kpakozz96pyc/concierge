@@ -8,8 +8,8 @@ namespace Concierge.DAL
 {
     internal class Repository<TEntity> : IRepository<TEntity> where TEntity: DbModel
     {
-        private readonly TheaterContext _context;
-        private readonly DbSet<TEntity> _dbSet;
+        internal readonly TheaterContext _context;
+        internal readonly DbSet<TEntity> _dbSet;
         public Repository(TheaterContext context)
         {
             _context = context;
@@ -17,7 +17,7 @@ namespace Concierge.DAL
         }
 
 
-        public IEnumerable<TEntity> GetPage(int pageNumber, int pageSize)
+        public virtual IEnumerable<TEntity> GetPage(int pageNumber, int pageSize)
         {
             return _dbSet.AsNoTracking().Skip(pageNumber * pageSize).Take(pageSize).ToList();
         }
