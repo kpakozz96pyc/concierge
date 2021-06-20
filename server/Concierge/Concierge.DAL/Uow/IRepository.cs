@@ -7,9 +7,7 @@ namespace Concierge.DAL
     {
         void Create(TEntity item);
         TEntity FindById(Guid id);
-        IEnumerable<TEntity> Get();
-
-        IEnumerable<TEntity> GetPage(int pageNumber, int pageSize);
+        IEnumerable<TEntity> GetAll();
         IEnumerable<TEntity> Get(Func<TEntity, bool> predicate);
         void Remove(TEntity item);
         void Update(TEntity item);

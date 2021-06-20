@@ -9,13 +9,15 @@ export const MainRouter: React.FC = () => {
     return (
         <>
             <Switch>
-                <Route path="">
+                <Route path="/catalog">
                     <LayoutComponent>
                         <CatalogPage/>
                     </LayoutComponent>
                 </Route>
                 <Route path={'/product/:id'}>
-                    <ProductDetailsPage/>
+                    <LayoutComponent>
+                        <ProductDetailsPage/>
+                    </LayoutComponent>
                 </Route>
 
                 <Route exact path="/">

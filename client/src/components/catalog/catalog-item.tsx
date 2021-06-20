@@ -1,7 +1,8 @@
 import React from "react";
-import {Product} from "../../models/product";
 
 import styles from "./catalog-item.module.scss"
+import {Link} from "react-router-dom";
+import {Product} from "../../../corelib/product";
 
 export interface CatalogItemComponentProps {
     item?: Product
@@ -15,8 +16,9 @@ export const CatalogItemComponent: React.FC<CatalogItemComponentProps> = ({item}
                     <div className={styles.cards_image}><img src={item.img}/></div>
                     <div className={styles.card_content}>
                         <h2 className={styles.card_title}>{item.displayName}</h2>
-                        <p className={styles.card_text}>{item.description}</p>
-                        <button className={styles.btn + ' ' + styles.card_btn}>Read More</button>
+                        <p className={styles.card_text}>{item.descriptionText}</p>
+
+                        <Link className={styles.btn + ' ' + styles.card_btn} to={`/product/${item.id}`}>Read More</Link>
                     </div>
                 </div>
             </div>

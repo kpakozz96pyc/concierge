@@ -1,8 +1,8 @@
 import {createReducer} from "typesafe-actions";
-import {Product} from "../models/product";
 import {Actions} from "./actions";
 import {combineReducers} from "redux";
 import {ProductFilter} from "../../corelib/product-filter";
+import {Product} from "../../corelib/product";
 
 const productList = createReducer<Product[]>([])
     .handleAction(Actions.catalog.searchCatalog.success, (state: any, action: any) => {

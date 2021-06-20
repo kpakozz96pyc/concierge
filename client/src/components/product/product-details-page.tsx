@@ -1,13 +1,11 @@
 import React, {useEffect} from "react";
-import {Product} from "../../models/product";
-
-import {CatalogItemComponent} from "../catalog/catalog-item";
 import {useSelector} from "react-redux";
 import {currentProductSelector} from "../../selectors/catalog-selector";
 import {useParams} from "react-router-dom";
 import {useAppDispatch} from "../../store/app-dispatch";
 import {Actions} from "../../store/actions";
-import {ProductEditComponent} from "./product-edit";
+import {ProductDetailsComponent} from './product-details';
+import {Product} from "../../../corelib/product";
 
 export interface ProductDetailsPageProps {
 }
@@ -22,11 +20,8 @@ export const ProductDetailsPage: React.FC<ProductDetailsPageProps> = () => {
     }, [dispatch, id]);
 
     return (
-        <>
-            <h1>Edit delete add product</h1>
             <div>
-                {currentProduct ? <ProductEditComponent item={currentProduct}/> : null}
+                {currentProduct ? <ProductDetailsComponent item={currentProduct}/> : null}
             </div>
-        </>
     );
 };

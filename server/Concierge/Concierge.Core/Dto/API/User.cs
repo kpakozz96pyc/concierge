@@ -1,5 +1,8 @@
-﻿namespace Concierge.Core.DTO.API
+﻿using TypeGen.Core.TypeAnnotations;
+
+namespace Concierge.Core.DTO.API
 {
+    [ExportTsClass]
     public class User
     {
         public string Login { get; set; }

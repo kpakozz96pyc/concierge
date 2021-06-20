@@ -1,5 +1,6 @@
-import {Product} from "../../models/product";
+
 import {HttpClient} from "./http-client";
+import {Product} from "../../../corelib/product";
 
 export interface IProductApi {
     getProduct(id:string): Promise<Product>
@@ -10,7 +11,7 @@ export class ProductApi implements  IProductApi{
     constructor(private readonly httpClient: HttpClient){}
 
     getProduct(id: string): Promise<Product> {
-        return this.httpClient.get<Product>('/product/GetProduct', {productId: id}).then()
+        return this.httpClient.get<Product>('/product/GetProduct', {productId: id}).then();
     }
 
     updateProduct(form: FormData): Promise<string> {

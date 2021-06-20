@@ -1,6 +1,7 @@
-import {Product} from "../models/product";
+
 import {from, Observable} from "rxjs";
 import {IProductApi} from "./api/product-api";
+import {Product} from "../../corelib/product";
 
 export interface IProductService {
     getProduct(id:string): Observable<Product>

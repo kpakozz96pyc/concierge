@@ -1,4 +1,7 @@
 ﻿{
   "generationSpecs": [ "DtoGenerationSpec" ],
-  "outputPath": "../../../client/corelib"
+  "outputPath": "../../../client/corelib",
+  "customTypeMappings": {
+    "System.DateTimeOffset": "string"
+  }
 }

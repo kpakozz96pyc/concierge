@@ -16,22 +16,16 @@ namespace Concierge.DAL
             _dbSet = context.Set<TEntity>();
         }
 
-
-        public virtual IEnumerable<TEntity> GetPage(int pageNumber, int pageSize)
+        public virtual IEnumerable<TEntity> GetAll()
         {
-            return _dbSet.AsNoTracking().Skip(pageNumber * pageSize).Take(pageSize).ToList();
-        }
-
-        public IEnumerable<TEntity> Get()
-        {
-            return _dbSet.AsNoTracking().ToList();
+            return _dbSet.AsNoTracking();
         }
 
         public IEnumerable<TEntity> Get(Func<TEntity, bool> predicate)
         {
-            return _dbSet.AsNoTracking().Where(predicate).ToList();
+            return _dbSet.AsNoTracking().Where(predicate);
         }
-        public TEntity FindById(Guid id)
+        public virtual TEntity FindById(Guid id)
         {
             return _dbSet.Find(id);
         }

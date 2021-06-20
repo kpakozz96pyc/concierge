@@ -3,10 +3,11 @@ import {productListSelector} from "../../selectors/catalog-selector";
 import {useAppDispatch} from "../../store/app-dispatch";
 import {Actions} from "../../store/actions";
 import React, {useEffect} from "react";
-import {Product} from "../../models/product";
 import {CatalogComponent} from "../../components/catalog/catalog";
 import {ProductFilter} from "../../../corelib/product-filter";
 import {CatalogFilterComponent} from "../../components/catalog-filter/catalog-filter";
+import {AppHeader} from "../../components/app-bar/app-bar";
+import {Product} from "../../../corelib/product";
 
 export const CatalogPage = () => {
     const list = useSelector(productListSelector) as Product[];
@@ -20,6 +21,7 @@ export const CatalogPage = () => {
 
     return (
         <div>
+
             <CatalogFilterComponent/>
             <CatalogComponent list={list}/>
         </div>

@@ -1,0 +1,48 @@
+.main-container {
+  display: flex;
+  flex-direction: column;
+
+  div {
+    padding: 10px;
+  }
+}
+
+.container {
+  display: flex;
+
+  div {
+    padding: 10px;
+  }
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 2;
+  .details{
+    flex-direction: row;
+  }
+}
+
+.image-block {
+  display: flex;
+  flex-grow: 1;
+  min-width: 350px;
+}
+
+.actions-block {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+  .image-block{
+    img{
+      width: 100%;
+    }
+    width: 100%;
+  }
+}

@@ -1,7 +1,8 @@
 import {createAction, createAsyncAction, createCustomAction} from "typesafe-actions";
-import {Product} from "../models/product";
 import {User} from "../models/user";
 import {ProductFilter} from "../../corelib/product-filter";
+import {Product} from "../../corelib/product";
+import {Purchase} from "../../corelib/purchase";
 
 const loadCatalog = createAsyncAction(
     '@@catalog/request',
@@ -45,6 +46,8 @@ const updateProductFilter = createAction(
 
 const logout = createCustomAction('@@logout');
 
+const addToCart = createAction('@@select-product')<Purchase>();
+
 export const Actions = {
     catalog: {
         searchCatalog,
@@ -59,5 +62,8 @@ export const Actions = {
     user: {
         login,
         logout
+    },
+    cart:{
+        addToCart
     }
 };

@@ -5,6 +5,8 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Concierge.DAL;
 using Product = Concierge.DAL.DbModels.Product;
+using Seat = Concierge.DAL.DbModels.Seat;
+using ProductExtended = Concierge.DAL.DbModels.ProductExtended;
 using Concierge.Core.DTO.API;
 using System.Linq;
 using Concierge.DAL.DbModels;
@@ -29,7 +31,7 @@ namespace Concierge.Api.Controllers
             using (var uow = _uowFactory.Create())
             {
                 var repository = uow.GetRepository<Product>();
-                var list = repository.Get();
+                var list = repository.GetAll();
                 return list;
             }
         }
@@ -41,7 +43,7 @@ namespace Concierge.Api.Controllers
             using (var uow = _uowFactory.Create())
             {
                 var repository = uow.GetRepository<Product>();
-                var list = repository.GetPage(pageNumber, pageSize);
+                var list = repository.GetAll().Skip(pageNumber * pageSize).Take(pageSize).ToList(); 
                 return list;
             }
         }
@@ -53,11 +55,11 @@ namespace Concierge.Api.Controllers
             {
                 var repository = uow.GetRepository<Product>();
 
-                var list = repository.GetPage(filter.PageNumber, filter.PageSize > 0 ? filter.PageSize : 10);
+                var list = repository.GetAll();
 
                 if (!String.IsNullOrEmpty(filter.Search))
                 {
-                    list = list.Where(p => p.DisplayName.Contains(filter.Search));
+                    list = list.Where(p => p.DisplayName.ToLowerInvariant().Contains(filter.Search.ToLowerInvariant()));
                 }
 
                 if (filter.FromDate.HasValue)
@@ -70,7 +72,9 @@ namespace Concierge.Api.Controllers
                     list = list.Where(p => p.Extended?.Start < filter.FromDate);
                 }
 
-                return list;
+                list = list.Skip(filter.PageNumber * filter.PageSize).Take(filter.PageSize);
+
+                return list.ToList();
             }
         }
 
@@ -114,7 +118,6 @@ namespace Concierge.Api.Controllers
         }
 
         [HttpGet("GetProduct")]
-        [Authorize]
         public Product GetProduct(Guid productId)
         {
             using (var uow = _uowFactory.Create())

@@ -1,7 +1,7 @@
-import {Product} from "../models/product";
 import {ICatalogApi} from "./api/catalog-api";
 import {from, Observable} from "rxjs";
 import {ProductFilter} from "../../corelib/product-filter";
+import {Product} from "../../corelib/product";
 
 export interface ICatalogService {
     getPage(size: number, skip?: number): Observable<Product[]>

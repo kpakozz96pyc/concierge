@@ -3,10 +3,10 @@
  * Any changes made to this file can be lost when this file is regenerated.
  */
 
-export interface ProductFilter {
+export class ProductFilter {
     pageNumber: number;
-    pageSize: number;
-    fromDate: Date;
-    toDate: Date;
+    pageSize: number = 9;
+    fromDate: string;
+    toDate: string;
     search: string;
 }

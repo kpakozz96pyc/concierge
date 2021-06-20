@@ -1,7 +1,7 @@
 import React from "react";
-import {Product} from "../../models/product";
 import styles from './catalog.module.scss';
 import {CatalogItemComponent} from "./catalog-item";
+import {Product} from "../../../corelib/product";
 
 export interface CatalogComponentProps {
     list: Product[]

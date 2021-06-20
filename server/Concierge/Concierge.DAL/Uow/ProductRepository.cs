@@ -11,12 +11,16 @@ namespace Concierge.DAL.Uow
     {
         public ProductRepository(TheaterContext context) : base(context)
         { }
-        public override IEnumerable<Product> GetPage(int pageNumber, int pageSize)
+        public override IEnumerable<Product> GetAll()
         {
             return _dbSet
             .Include(p => p.Extended)
-            .AsNoTracking()
-            .Skip(pageNumber * pageSize).Take(pageSize).ToList();
+            .AsNoTracking();
+        }
+
+        public override Product FindById(Guid id)
+        {
+            return _dbSet.Include(p=>p.Extended).First(p=>p.Id == id);
         }
     }
 }

@@ -1,6 +1,7 @@
-import {Product} from "../../models/product";
+
 import {HttpClient} from "./http-client";
 import {ProductFilter} from "../../../corelib/product-filter";
+import {Product} from "../../../corelib/product";
 
 export interface ICatalogApi {
     getPage(size: number, skip?: number): Promise<Product[]>

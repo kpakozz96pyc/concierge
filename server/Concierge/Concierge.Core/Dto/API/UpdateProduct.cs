@@ -1,7 +1,9 @@
 ﻿using System;
+using TypeGen.Core.TypeAnnotations;
 
 namespace Concierge.Core.DTO.API
 {
+    [ExportTsClass]
     public class UpdateProduct
     {
         public Guid Id { get; set; }
