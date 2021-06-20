@@ -28,7 +28,6 @@ namespace Concierge.Api
         public void ConfigureServices(IServiceCollection services)
         {
             configureAuth(services);
-            var apiConfig = ConfigureApi();
             
             services.AddSwaggerGen(swagger =>
             {
@@ -59,7 +58,7 @@ namespace Concierge.Api
                 options.SerializerSettings.Converters = serializerSettings.Converters;
             });
 
-            services.AddSingleton<IUnitOfWorkFactory, UnitOfWorkFactory>(x=> new UnitOfWorkFactory(apiConfig.ConnectionString));
+            services.AddSingleton<IUnitOfWorkFactory, UnitOfWorkFactory>(x=> new UnitOfWorkFactory(Configuration.GetConnectionString("TreaterContext")));
             
             var sp = services.BuildServiceProvider();
         }
@@ -111,15 +110,5 @@ namespace Concierge.Api
                     };
                 });
         }
-
-        private ApiConfig ConfigureApi() => new ApiConfig(
-            Environment.GetEnvironmentVariable(@"DB_CONNECTION_STRING"),
-            "https://ams3.digitaloceanspaces.com",
-            "gnomj-storage",
-            Environment.GetEnvironmentVariable(@"IMG_FOLDER"),
-            "V2GGBE5SBKK2VYCLWU45", 
-            "F6H8gOGDepFFJrJ6dvohZPzNn4Ff+xRVa+vkplQBwf8"
-        );
-
     }
 }
