@@ -25,28 +25,17 @@ namespace Concierge.Api.Controllers
             _uowFactory = uowFactory;
         }
 
-        [HttpGet]
+        [HttpGet("GetAll")]
         public IEnumerable<Product> GetAll()
         {
             using (var uow = _uowFactory.Create())
             {
                 var repository = uow.GetRepository<Product>();
                 var list = repository.GetAll();
-                return list;
+                return list.ToList();
             }
         }
 
-
-        [HttpGet("GetPage")]
-        public IEnumerable<Product> GetPage(int pageNumber, int pageSize)
-        {
-            using (var uow = _uowFactory.Create())
-            {
-                var repository = uow.GetRepository<Product>();
-                var list = repository.GetAll().Skip(pageNumber * pageSize).Take(pageSize).ToList(); 
-                return list;
-            }
-        }
 
         [HttpPost("Search")]
         public IEnumerable<Product> Search(ProductFilter filter)
@@ -106,8 +95,7 @@ namespace Concierge.Api.Controllers
             }
         }
 
-        [HttpPost]
-        [Authorize]
+        [HttpPost("Remove")]
         public void Remove(Guid productId)
         {
             using (var uow = _uowFactory.Create())

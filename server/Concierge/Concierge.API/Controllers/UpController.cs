@@ -15,12 +15,5 @@ namespace Concierge.Api.Controllers
         {
             return "i'm up";
         }
-
-
-        [HttpGet("test")]
-        public async Task<string> Test()
-        {
-            return "Ok";
-        }
     }
 }
