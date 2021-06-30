@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {useDispatch, useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
 import {Actions} from "../../store/actions";
 import {ProductFilter} from "../../../corelib/product-filter";
 import Button from '@material-ui/core/Button';
@@ -28,6 +28,8 @@ export const CatalogFilterComponent: React.FC = () => {
     const [toDate, setToDate] = useState(null);
     const dispatch = useDispatch();
 
+    const buttonRef = React.createRef();
+
     const onSearchChange = (event) => {
         setSearch(event.target.value);
     };
@@ -54,11 +56,17 @@ export const CatalogFilterComponent: React.FC = () => {
         setTimeout(() => dispatch(Actions.catalog.updateProductFilter(newFilter)))
     };
 
+    const handleKeyDown = (event) => {
+        if (event.key === 'Enter') {
+            updateFilter();
+        }
+    }
+
     return (
         <Grid item xs={12} sm={12} md={12} lg={12}>
             <Paper className={classes.paper}>
                 <div className={styles.searchBar}>
-                    <TextField fullWidth={true} margin="normal" label="Search" onChange={onSearchChange}/>
+                    <TextField fullWidth={true} margin="normal" label="Search" onChange={onSearchChange} onKeyDown={handleKeyDown}/>
 
                     <KeyboardDatePicker
                         margin="normal"

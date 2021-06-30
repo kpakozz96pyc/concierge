@@ -48,7 +48,11 @@ namespace Concierge.Api.Controllers
 
                 if (!String.IsNullOrEmpty(filter.Search))
                 {
-                    list = list.Where(p => p.DisplayName.ToLowerInvariant().Contains(filter.Search.ToLowerInvariant()));
+                    list = list.Where(
+                        p => p.DisplayName.ToLowerInvariant().Contains(filter.Search.ToLowerInvariant())
+                        || (!String.IsNullOrEmpty(p.DescriptionText) && p.DescriptionText.ToLowerInvariant().Contains(filter.Search.ToLowerInvariant()))
+                        || (!String.IsNullOrEmpty(p.DescriptionHTML) && p.DescriptionHTML.ToLowerInvariant().Contains(filter.Search.ToLowerInvariant()))
+                        );
                 }
 
                 if (filter.FromDate.HasValue)
@@ -89,7 +93,7 @@ namespace Concierge.Api.Controllers
                     DescriptionHTML = product.DescriptionHTML,
                     Img = product.Image,
                     Extended = ext
-                    
+
                 });
                 return product.Id;
             }
