@@ -1,5 +1,4 @@
 import React, {ChangeEvent, useCallback, useState} from "react";
-import styles from "../../components/catalog/catalog.module.scss";
 import {useAppDispatch} from "../../store/app-dispatch";
 import {Actions} from "../../store/actions";
 
@@ -29,10 +28,9 @@ export const LoginPage: React.FC = () => {
         [dispatch]
     );
 
-    return (<div className={styles['login-form']}>
+    return (<div>
         <div>
             <input
-                className={styles['login-input']}
                 type="email"
                 name="login"
                 value={login}
@@ -44,7 +42,6 @@ export const LoginPage: React.FC = () => {
 
         <div>
             <input
-                className={styles['password-input']}
                 type="password"
                 name="password"
                 value={password}

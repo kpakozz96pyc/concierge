@@ -69,6 +69,6 @@ export async function configureRoot(): Promise<RootConfig> {
 }
 
 function getConfig(): Promise<string> {
-    //return  of("https://localhost:44366/").toPromise();
-    return  of("http://kpakozz96pyc.xyz:8080/").toPromise();
+    return  of("https://localhost:44366/").toPromise();
+    //return  of("http://kpakozz96pyc.xyz:8080/").toPromise();
 }

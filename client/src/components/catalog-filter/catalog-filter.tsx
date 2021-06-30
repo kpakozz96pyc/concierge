@@ -4,10 +4,25 @@ import {Actions} from "../../store/actions";
 import {ProductFilter} from "../../../corelib/product-filter";
 import Button from '@material-ui/core/Button';
 import {KeyboardDatePicker} from "@material-ui/pickers";
-import {TextField} from "@material-ui/core";
+import {Grid, makeStyles, Paper, TextField} from "@material-ui/core";
 import styles from "./catalog-filter.module.scss"
 
+const useStyles = makeStyles((theme) => ({
+    paper: {
+        padding: theme.spacing(2),
+        textAlign: 'center',
+        color: theme.palette.text.secondary,
+    },
+
+    dateFilter: {
+        [theme.breakpoints.down('sm')]: {
+            display: 'none',
+        }
+    }
+}));
+
 export const CatalogFilterComponent: React.FC = () => {
+    const classes = useStyles();
     const [search, setSearch] = useState('');
     const [fromDate, setFromDate] = useState(null);
     const [toDate, setToDate] = useState(null);
@@ -36,38 +51,44 @@ export const CatalogFilterComponent: React.FC = () => {
         newFilter.fromDate = fromDate;
         newFilter.toDate = toDate;
         newFilter.search = search;
-        setTimeout(()=> dispatch(Actions.catalog.updateProductFilter(newFilter)))
+        setTimeout(() => dispatch(Actions.catalog.updateProductFilter(newFilter)))
     };
 
     return (
-        <div className={styles.searchBar}>
-            <TextField margin="normal" label="Search" onChange={onSearchChange}/>
-            <KeyboardDatePicker
-                margin="normal"
-                label="Date from"
-                format="MM/dd/yyyy"
-                value={fromDate}
-                onChange={onFromDateChange}
-                KeyboardButtonProps={{
-                    'aria-label': 'change date',
-                }}
-            />
+        <Grid item xs={12} sm={12} md={12} lg={12}>
+            <Paper className={classes.paper}>
+                <div className={styles.searchBar}>
+                    <TextField fullWidth={true} margin="normal" label="Search" onChange={onSearchChange}/>
 
-            <KeyboardDatePicker
-                margin="normal"
+                    <KeyboardDatePicker
+                        margin="normal"
+                        className={classes.dateFilter}
+                        label="Date from"
+                        format="dd/MM/yyyy"
+                        value={fromDate}
+                        onChange={onFromDateChange}
+                        KeyboardButtonProps={{
+                            'aria-label': 'change date',
+                        }}
+                    />
+                    <KeyboardDatePicker
+                        margin="normal"
+                        className={classes.dateFilter}
+                        label="Date to"
+                        format="dd/MM/yyyy"
+                        value={toDate}
+                        onChange={onToDateChange}
+                        KeyboardButtonProps={{
+                            'aria-label': 'change date',
+                        }}
+                    />
 
-                label="Date to"
-                format="MM/dd/yyyy"
-                value={toDate}
-                onChange={onToDateChange}
-                KeyboardButtonProps={{
-                    'aria-label': 'change date',
-                }}
-            />
 
-            <div>
-                <Button onClick={updateFilter}>Search</Button>
-            </div>
-        </div>
+                    <div>
+                        <Button onClick={updateFilter}>Search</Button>
+                    </div>
+                </div>
+            </Paper>
+        </Grid>
     );
 };
