@@ -13,6 +13,8 @@ namespace Concierge.Core.DTO.API
 
         public string DescriptionHTML { get; set; }
 
+        public double? DefaultSeatPrice { get; set; }
+
         public string Image { get; set; }
 
         public DateTimeOffset Start { get; set; }

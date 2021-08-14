@@ -4,6 +4,7 @@
     {
         Reserved = 1,
         Sold = 2,
-        Unknown = 0
+        Free = 3,
+        Unknown = 0,
     }
 }

@@ -1,5 +1,4 @@
-﻿using Concierge.Core.DTO.API;
-using Concierge.Core.Enums;
+﻿using Concierge.Core.Enums;
 using System;
 using System.Collections.Generic;
 using System.Reflection;

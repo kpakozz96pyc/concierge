@@ -20,7 +20,7 @@ namespace Concierge.DAL.Uow
 
         public override Product FindById(Guid id)
         {
-            return _dbSet.Include(p=>p.Extended).First(p=>p.Id == id);
+            return _dbSet.Include(p=>p.Extended).ThenInclude(ext => ext.Hall).FirstOrDefault(p=>p.Id == id);
         }
     }
 }

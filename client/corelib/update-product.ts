@@ -9,6 +9,7 @@ export class UpdateProduct {
     art: string;
     description: string;
     descriptionHTML: string;
+    defaultSeatPrice: number;
     image: string;
     start: string;
 }

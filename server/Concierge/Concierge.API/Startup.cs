@@ -12,6 +12,8 @@ using Newtonsoft.Json;
 using Concierge.Api.Attributes;
 using Concierge.DAL;
 using Microsoft.EntityFrameworkCore;
+using Concierge.BL;
+using AutoMapper;
 
 namespace Concierge.Api
 {
@@ -59,8 +61,9 @@ namespace Concierge.Api
             });
 
             services.AddSingleton<IUnitOfWorkFactory, UnitOfWorkFactory>(x=> new UnitOfWorkFactory(Configuration.GetConnectionString("TreaterContext")));
-            
-            var sp = services.BuildServiceProvider();
+
+            services.AddSingleton<IMapper>(x => DefaultMapper.DefaultMapperConfiguration.Configuration().CreateMapper());
+            services.AddSingleton<IHallManager, HallManager>(x => new HallManager());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

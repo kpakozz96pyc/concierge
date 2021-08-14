@@ -7,8 +7,6 @@ namespace Concierge.DAL.DbModels
 {
     public class PurchaseDescription : DbModel, IDbModel
     {
-        public int RowNumber { get; set; }
-
-        public int PlaceNumber { get; set; }
+        public Seat Seat { get; set; }
     }
 }

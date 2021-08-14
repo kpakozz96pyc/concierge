@@ -4,7 +4,8 @@
  */
 
 export enum SeatType {
-    Parter = 1,
+    Parterre = 1,
     Balcony = 2,
+    Floor = 3,
     Unknown = 0,
 }

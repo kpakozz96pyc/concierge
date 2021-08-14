@@ -3,7 +3,8 @@
  * Any changes made to this file can be lost when this file is regenerated.
  */
 
+import { Seat } from "./seat";
+
 export class PurchaseDescription {
-    rowNumber: number;
-    placeNumber: number;
+    seat: Seat;
 }

@@ -5,7 +5,6 @@ import {Actions} from "../../store/actions";
 import React, {useEffect} from "react";
 import {CatalogComponent} from "../../components/catalog/catalog";
 import {ProductFilter} from "../../../corelib/product-filter";
-import {CatalogFilterComponent} from "../../components/catalog-filter/catalog-filter";
 import {Product} from "../../../corelib/product";
 
 export const CatalogPage = () => {

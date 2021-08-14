@@ -9,6 +9,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Concierge.API", "Concierge.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Concierge.Core", "Concierge.Core\Concierge.Core.csproj", "{B1C49D0E-6E23-477C-AEBC-55FE84F0FE84}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Concierge.BL", "Concierge.BL\Concierge.BL.csproj", "{CD94D8F1-3E98-40BD-AAE0-DD59259E92BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Concierge.Mapper", "Concierge.Mapper\Concierge.Mapper.csproj", "{11CC866F-D129-4918-8A1A-58324B89F2A2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{B1C49D0E-6E23-477C-AEBC-55FE84F0FE84}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B1C49D0E-6E23-477C-AEBC-55FE84F0FE84}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B1C49D0E-6E23-477C-AEBC-55FE84F0FE84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD94D8F1-3E98-40BD-AAE0-DD59259E92BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD94D8F1-3E98-40BD-AAE0-DD59259E92BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD94D8F1-3E98-40BD-AAE0-DD59259E92BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD94D8F1-3E98-40BD-AAE0-DD59259E92BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11CC866F-D129-4918-8A1A-58324B89F2A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11CC866F-D129-4918-8A1A-58324B89F2A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11CC866F-D129-4918-8A1A-58324B89F2A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11CC866F-D129-4918-8A1A-58324B89F2A2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Concierge.DAL;
 using Product = Concierge.DAL.DbModels.Product;
@@ -9,7 +8,8 @@ using Seat = Concierge.DAL.DbModels.Seat;
 using ProductExtended = Concierge.DAL.DbModels.ProductExtended;
 using Concierge.Core.DTO.API;
 using System.Linq;
-using Concierge.DAL.DbModels;
+using Concierge.BL;
+using AutoMapper;
 
 namespace Concierge.Api.Controllers
 {
@@ -19,10 +19,16 @@ namespace Concierge.Api.Controllers
     {
         private readonly IUnitOfWorkFactory _uowFactory;
 
+        private readonly IHallManager _hallManager;
 
-        public ProductController(IUnitOfWorkFactory uowFactory)
+        private readonly IMapper _mapper;
+
+
+        public ProductController(IUnitOfWorkFactory uowFactory, IHallManager hallManager, IMapper mapper)
         {
             _uowFactory = uowFactory;
+            _hallManager = hallManager;
+            _mapper = mapper;
         }
 
         [HttpGet("GetAll")]
@@ -81,7 +87,9 @@ namespace Concierge.Api.Controllers
                 var ext = new ProductExtended
                 {
                     Start = product.Start,
-                    Hall = new List<Seat>()
+                    Hall = _hallManager
+                        .CreateDeafaultHall(product.DefaultSeatPrice)
+                        .Select(dto => _mapper.Map<Seat>(dto)).ToList()
                 };
 
                 repository.Create(new Product
@@ -105,7 +113,8 @@ namespace Concierge.Api.Controllers
             using (var uow = _uowFactory.Create())
             {
                 var repository = uow.GetRepository<Product>();
-                repository.Remove(repository.FindById(productId));
+                var item = repository.FindById(productId);
+                repository.Remove(item);
             }
         }
 
@@ -115,7 +124,8 @@ namespace Concierge.Api.Controllers
             using (var uow = _uowFactory.Create())
             {
                 var repository = uow.GetRepository<Product>();
-                return repository.FindById(productId);
+                var a = repository.FindById(productId);
+                return a;
             }
         }
     }
