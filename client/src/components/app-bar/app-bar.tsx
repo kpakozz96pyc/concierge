@@ -6,6 +6,7 @@ import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import {Cart} from "../../../corelib/cart";
 import {useSelector} from "react-redux";
 import {cartSelector} from "../../selectors/cart-selector";
+import {Link} from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -19,6 +20,9 @@ const useStyles = makeStyles((theme) => ({
     },
     cart: {
       float:'right'
+    },
+    cartLink:{
+        color: '#ffffff'
     },
 }));
 
@@ -34,11 +38,12 @@ export const AppHeader: React.FC = () => {
                     Theater
                 </Typography>
 
-                <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+                <Link to="/cart" className={classes.cartLink}><IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu" >
                     <Typography variant="h6" className={classes.title}>
                         {cart?.purchases?.length || 0}
                     </Typography><ShoppingCartIcon />
                 </IconButton>
+                </Link>
             </Toolbar>
         </AppBar>
     );

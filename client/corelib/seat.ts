@@ -7,7 +7,7 @@ import { SeatType } from "./seat-type";
 import { SeatStatus } from "./seat-status";
 
 export class Seat {
-    row: number;
+    row?: number;
     number: number;
     type: SeatType;
     status: SeatStatus;
